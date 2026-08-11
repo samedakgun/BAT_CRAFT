@@ -52,12 +52,7 @@ class NameEngraving extends Component {
     const raw = textInput.value;
 
     const permitted = raw.replace(ALLOWED_CHARACTERS, '');
-    let cleaned = permitted.replace(/\s{2,}/g, ' ');
-
-    if (this.#shouldUppercase) {
-      // Türkçe'ye özel: i → İ (varsayılan toUpperCase bunu I yapar).
-      cleaned = cleaned.toLocaleUpperCase('tr-TR');
-    }
+    let cleaned = this.#applyCase(permitted.replace(/\s{2,}/g, ' '));
 
     if (cleaned !== raw) {
       const caret = textInput.selectionStart ?? cleaned.length;
@@ -96,8 +91,25 @@ class NameEngraving extends Component {
     this.#render();
   }
 
-  get #shouldUppercase() {
-    return this.refs.textInput.dataset.uppercase === 'true';
+  /**
+   * Harf düzenini uygular. Türkçe'ye özel: i → İ ve I → ı dönüşümleri
+   * varsayılan toUpperCase/toLowerCase ile yanlış çıkar, bu yüzden
+   * her yerde 'tr-TR' yereli kullanılıyor.
+   * @param {string} value
+   * @returns {string}
+   */
+  #applyCase(value) {
+    switch (this.refs.textInput.dataset.case) {
+      case 'upper':
+        return value.toLocaleUpperCase('tr-TR');
+      case 'title':
+        return value.replace(
+          /\S+/g,
+          (word) => word.charAt(0).toLocaleUpperCase('tr-TR') + word.slice(1).toLocaleLowerCase('tr-TR')
+        );
+      default:
+        return value;
+    }
   }
 
   #render() {

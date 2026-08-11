@@ -1,6 +1,6 @@
 # HANDOFF — Şu An Neredeyiz
 
-**Son güncelleme:** 11 Ağustos 2026
+**Son güncelleme:** 11 Ağustos 2026 (2. tur)
 **Marka:** BAT CRAFT — *Personalized Bats*
 **Durum:** ⏸️ **Ara verildi.** Tema hazır, Shopify'a yüklenmeyi bekliyor.
 
@@ -38,8 +38,8 @@ Horizon v4.1.3, klasör artık `theme/` (uzun export adı sadeleştirildi).
   2. **Şerit** — akan yazı: *ADI YAZILIR. KAPINA GELİR.*
   3. **Nasıl yapılıyor** — görsel + *"Sticker değil. Oyma."*
   4. **Üç madde** — Tek/kopyası yok · Gerçek gravür · Hediyeye hazır
-  5. **SSS** — 5 soruluk akordiyon (karakter limiti, Türkçe harf, yanlış isim,
-     iade, teslimat)
+  5. **SSS** — 6 soruluk akordiyon (karakter limiti, Türkçe harf, yanlış isim,
+     iade, teslimat, ölçüler)
 - **Header sadeleştirildi:** duyuru çubuğu Türkçe ("Kişiye özel üretim · Hediyeye
   hazır ambalaj"), **arama + ülke seçici + dil seçici kapatıldı** (tek ürün, tek
   pazar, tek dil — hepsi gereksiz gürültüydü).
@@ -58,13 +58,23 @@ Tüm şablon JSON'ları doğrulandı ✅
 - `properties[İsim]` line item property → sipariş, e-posta, kargo fişi
 - Yazdıkça görselin üzerinde canlı gravür önizlemesi
 - Uzun isimleri alana otomatik sığdırma
-- Türkçe büyük harf (`i → İ`), kazınamayan karakter filtresi, karakter sayacı
+- Türkçe harf düzeni (`ismail → İsmail`), kazınamayan karakter filtresi, sayaç
+- **El yazısı gravür fontu temaya gömülü** (Dancing Script, 38 KB, Türkçe tam)
 - "İsim yazılmasın" seçeneği
 - Ek uygulama gerekmiyor (aylık ~20 $ tasarruf)
 
-### GitHub
-Proje `git` deposuna alındı, **479 dosya commit'lendi**, remote eklendi.
-⚠️ **Push edilmedi** — GitHub kimlik doğrulaması sende. Komut aşağıda.
+### GitHub ✅ bağlandı ve push edildi
+`github.com/samedakgun/BAT_CRAFT` · branch `main`
+- Proje git deposuna alındı, remote bağlandı, **push edildi**
+- `.gitignore`: `.DS_Store`, `*.zip`, `node_modules/` — repo temiz (junk yok, 4.1 MB)
+- `README.md` eklendi — repoyu açan ilk bakışta ne olduğunu anlıyor
+- Tema klasörü `theme/` olarak sadeleştirildi (uzun export adı gitti)
+
+Bundan sonra değişiklik yapmak için:
+```bash
+cd ~/Desktop/bezbol_sopası
+git add -A && git commit -m "mesaj" && git push
+```
 
 ### Shopify — mevcut durum (kontrol edildi)
 | | |
@@ -90,25 +100,17 @@ Proje `git` deposuna alındı, **479 dosya commit'lendi**, remote eklendi.
 > Ben yükleyemedim: Shopify admin arayüzü shadow DOM kullanıyor, tarayıcı
 > otomasyonu "İçe aktar" butonuna erişemiyor.
 
-**2. GitHub'a gönder** *(1 dakika)*
-```bash
-cd ~/Desktop/bezbol_sopası
-git push -u origin main
-```
-Kimlik sorarsa: kullanıcı adı `samedakgun`, şifre yerine **GitHub Personal Access
-Token** (github.com/settings/tokens → repo yetkisi).
-
-**3. Ürünü oluştur**
+**2. Ürünü oluştur**
 Metinler hazır: `icerik/SITE-METINLERI.md` §2. Fotoğraf yoksa geçici görselle de
 olur. Oluşturduktan sonra tema editöründe **Ürün bölümüne o ürünü seç**
 (şu an boş — bu yapılmazsa ana sayfada ürün görünmez).
 
-**4. Sayfaları gir:** Hakkımızda · SSS · İletişim (`SITE-METINLERI.md` §4-6)
+**3. Sayfaları gir:** Hakkımızda · SSS · İletişim (`SITE-METINLERI.md` §4-6)
 
-**5. Menüyü düzelt:** İçerik → Menüler → "Katalog" linkini sil
+**4. Menüyü düzelt:** İçerik → Menüler → "Katalog" linkini sil
 (tek ürünlü mağazada katalog anlamsız). Yerine SSS ve İletişim.
 
-**6. İletişim e-postasını** kurumsal adrese çevir (Ayarlar → Genel)
+**5. İletişim e-postasını** kurumsal adrese çevir (Ayarlar → Genel)
 
 ### 🤖 BEN — hazır bekleyen işler
 - **4.4** Yasal sayfa metinleri (mesafeli satış, ön bilgilendirme, KVKK, iade)
@@ -119,18 +121,45 @@ olur. Oluşturduktan sonra tema editöründe **Ürün bölümüne o ürünü se�
 
 ---
 
-## 🟡 Beni bekleyen bilgiler
+## ✅ Ürün bilgileri işlendi (11 Ağustos)
 
-Bunlar gelmeden site "tam" olmuyor:
+Atölyeden gelen bilgiler siteye, temaya ve metinlere girildi:
+
+| Bilgi | Değer | Nereye işlendi |
+|---|---|---|
+| Azami karakter | **20** | Gravür bloğu, SSS, ürün açıklaması |
+| Uzunluk | **66 cm** | Ürün açıklaması, SSS, ana sayfa |
+| Çap | **5,5–6 cm** | Ürün açıklaması, SSS |
+| Hazırlık | **2 iş günü** | Her yerde (7 ayrı metin) |
+| Kargo | **2 desi** | Kargo ayarı notu, SSS |
+| Gravür fontu | **El yazısı** | Aşağıya bak |
+
+### Font kararı — Dancing Script (Bold)
+"El yazısı, ismini sen seç" dendiği için seçtim. Gerekçe:
+- Shopify'ın font kütüphanesinde **el yazısı kategorisi yok** → fontu
+  `theme/assets/` içine **gömdüm** (38 KB, harici istek yok, sayfa hızını etkilemez)
+- **Türkçe tam destek** — `ı` ve `ğ ş İ` farklı alt kümelerde olduğu için
+  iki ayrı woff2 dosyası gerekti, ikisi de eklendi
+- OFL lisanslı, ticari kullanım ve gömme serbest → `marka/FONT-LISANS.md`
+
+**Bunun yan etkisi:** El yazısı fontta TÜMÜ BÜYÜK yazı kötü görünüyor. Harf
+düzenini **"Baş harf büyük"** yaptım (`ismail → İsmail`, `IŞIL → Işıl`,
+`şükrü çağlar → Şükrü Çağlar`). Türkçe kurallarına göre çalışıyor. Tema
+editöründen "tümü büyük"e çevirebilirsin.
+
+⚠️ **Atölye başka bir el yazısı fontu kullanıyorsa haber ver** — onu gömerim.
+Sitedeki önizleme ile gelen ürün farklı görünürse şikâyet gelir.
+
+---
+
+## 🟡 Hâlâ bekleyen bilgiler
 
 | Bilgi | Nerede kullanılacak |
 |---|---|
-| ⭐ **Gravür fontu** (dosya/ad) | Canlı önizleme — şu an varsayılan font |
-| ⭐ **Azami karakter sayısı** | Şimdilik **12** girildi |
-| Düz sopanın karşıdan fotoğrafı | Canlı önizlemenin baz görseli |
-| Ahşap cinsi, boy, ağırlık | Ürün açıklaması, SSS, kargo |
-| Hazırlık süresi (kaç iş günü) | Ürün sayfası, SSS, meta description |
-| Varyantlar (kaç boy/ton) | Ürün varyantları |
+| **Ürün fotoğrafları** | Galeri + canlı önizlemenin baz görseli (düz, isimsiz sopa, tam karşıdan) |
+| **Fiyat** | Ürün sayfası |
+| Ahşap cinsi (dişbudak/kayın/meşe) | Ürün açıklaması, SSS |
+| Varyant var mı (boy/ton seçeneği) | Ürün varyantları |
 | WhatsApp numarası | İletişim, footer |
 | Firma unvanı, adres, vergi no | Footer (yasal zorunluluk) |
 

@@ -29,7 +29,7 @@ ben güncellerim.
 
 - **Title:** `BAT CRAFT — İsme Özel Ahşap Beyzbol Sopası`
 - **Meta description:**
-  `Adı sana ait bir parça. İstediğin ismi lazerle ahşaba oyuyoruz — sticker değil, oyma. Hediyeye hazır ambalajıyla {{hazırlık süresi}} iş gününde kapında.`
+  `Adı sana ait bir parça. İstediğin ismi lazerle ahşaba oyuyoruz — sticker değil, oyma. Hediyeye hazır ambalajıyla 2 iş gününde kapında.`
 
 ---
 
@@ -52,8 +52,8 @@ baskı değil — oyma. Elini gezdirince hissedersin, zamanla da silinmez.</p>
 
 <h3>Ne alıyorsun</h3>
 <ul>
-  <li>{{ahşap cinsi}} gövde, {{boy}} cm, {{ağırlık}} gr</li>
-  <li>Lazer gravür — istediğin isim, en fazla 12 karakter</li>
+  <li>Ahşap gövde · 66 cm uzunluk · 5,5-6 cm çap</li>
+  <li>Lazer gravür — istediğin isim, en fazla 20 karakter</li>
   <li>Türkçe karakter desteği: Ğ, Ş, İ, Ç, Ö, Ü</li>
   <li>Hediyeye hazır ambalaj</li>
 </ul>
@@ -63,7 +63,7 @@ baskı değil — oyma. Elini gezdirince hissedersin, zamanla da silinmez.</p>
   <li>Yukarıdaki kutuya ismi yaz — sopanın üstünde anında görürsün.</li>
   <li>Siparişi ver.</li>
   <li>Kazımadan önce WhatsApp'tan son bir onay alırız. Yazımdan emin oluruz.</li>
-  <li>{{hazırlık süresi}} iş günü içinde kargoya verilir.</li>
+  <li>2 iş günü içinde kargoya verilir.</li>
 </ol>
 
 <h3>Bilmen gerekenler</h3>
@@ -79,7 +79,7 @@ seninle birlikte teyit ediyoruz.</p>
 ### SEO (ürün sayfası altındaki "Search engine listing → Edit")
 - **Page title:** `İsme Özel Ahşap Beyzbol Sopası | BAT CRAFT`
 - **Meta description:**
-  `İstediğin ismi lazerle ahşaba oyuyoruz. Sticker değil, oyma. Hediyeye hazır ambalaj, {{hazırlık süresi}} iş gününde kargoda.`
+  `İstediğin ismi lazerle ahşaba oyuyoruz. Sticker değil, oyma. Hediyeye hazır ambalaj, 2 iş gününde kargoda.`
 - **URL handle:** `isme-ozel-ahsap-beyzbol-sopasi`
 
 ### Kategori (⚠️ önemli)
@@ -92,8 +92,8 @@ seninle birlikte teyit ediyoruz.</p>
 {{ Kaç boy / kaç ahşap tonu satılacak? Bilgi gelince buraya yazacağım. }}
 
 ### Ağırlık ve kargo
-- Weight: `{{ağırlık}} gr`
-- ⚠️ Kargo desisi uzun üründe farklı hesaplanıyor — kargo profilinde sabit ücret kullan.
+- Kargo: **2 desi**
+- ⚠️ 2 desi üzerinden sabit kargo ücreti gir (uzun ürün desi hesabı ağırlıktan değil hacimden gelir).
 
 ---
 
@@ -121,7 +121,7 @@ seninle birlikte teyit ediyoruz.</p>
 |---|---|
 | `Tek. Kopyası yok.` | `Üzerinde senin yazdığın isim var. Aynısından ikinci bir tane yok.` |
 | `Gerçek ahşap, gerçek gravür.` | `Baskı değil, sticker değil. Ahşaba oyulmuş.` |
-| `{{hazırlık süresi}} iş gününde kargoda.` | `Onayını alırız, kazırız, yola çıkarırız.` |
+| `2 iş gününde kargoda.` | `Onayını alırız, kazırız, yola çıkarırız.` |
 
 ### Bölüm 5 — Yorumlar
 {{ İlk 5 yorum gelince buraya yerleşecek — Faz 8.1.3 }}
@@ -143,7 +143,7 @@ Aşağıdaki SSS bölümünden ilk 5 soru.
 **Pages → Add page → başlık: `Sık Sorulan Sorular`**
 
 **Kaç karakter yazabilirim?**
-En fazla 12 karakter. Boşluk da bir karakter sayılıyor. Ürün sayfasındaki kutuya
+En fazla 20 karakter. Boşluk da bir karakter sayılıyor. Ürün sayfasındaki kutuya
 yazarken sayaç sana kalan hakkını gösteriyor.
 
 **Türkçe karakter yazabilir miyim?**
@@ -153,7 +153,7 @@ Evet. Ğ, Ş, İ, Ç, Ö, Ü hepsi kazınıyor.
 Hayır. Lazer bunları ahşaba oyamıyor. Harf, rakam ve boşluk kullanabilirsin.
 
 **Kaç günde gelir?**
-Sipariş onayından sonra {{hazırlık süresi}} iş günü içinde kargoya veriliyor.
+Sipariş onayından sonra 2 iş günü içinde kargoya veriliyor.
 Kargo süresi bulunduğun şehre göre 1-3 gün.
 
 **Yanlış isim yazarsam ne olur?**
@@ -167,8 +167,11 @@ Yönetmeliği m.15/ç). Üzerinde senin ismin olan bir ürünü başkasına sata
 için. Bu yüzden kazımadan önce mutlaka teyit alıyoruz.
 Ürün hatalı veya hasarlı gelirse tabii ki değiştiriyoruz.
 
+**Ölçüleri nedir?**
+66 cm uzunluğunda, en geniş yerinde 5,5-6 cm. Kargoda 2 desi.
+
 **Hangi ahşaptan yapılıyor?**
-{{ahşap cinsi}}. {{boy}} cm boyunda, {{ağırlık}} gram.
+{{ ahşap cinsi — dişbudak / kayın / meşe? }}
 
 **Toplu sipariş yapabilir miyim?**
 Evet. Dükkân açılışı, takım, iş yeri hediyesi gibi toplu siparişler için
@@ -221,13 +224,15 @@ Mesajlara hafta içi aynı gün, hafta sonu ertesi iş günü dönüyoruz.
 
 ---
 
-## 7. Koleksiyonlar
+## 7. Koleksiyonlar — ⏸️ şimdilik gerek yok
 
-**Products → Collections**
+Tek ürünle başlıyoruz; koleksiyon sayfası boş bir katman ekler, müşteriyi ürünle
+arasına bir tık koyar. Ana sayfa zaten ürünün kendisi.
+
+İkinci ürün (ikili set, farklı boy, kesme tahtası) eklenince şunlar açılacak:
 
 | Koleksiyon | Açıklama |
 |---|---|
-| `Tüm Ürünler` | `Hepsi burada.` |
 | `Hediyelik` | `Herkesin aldığı şeye benzemeyen bir hediye. Üzerinde adı yazıyor.` |
 | `İkili Set` | `İki isim, iki sopa. Baba-oğul, iki kardeş, iki ortak.` |
 
@@ -258,7 +263,7 @@ merhaba@badcraftofficial.com · {{telefon}}
 ```
 BAT CRAFT
 Adı yazılır. Kapına gelir.
-İsme özel ahşap sopa · {{hazırlık süresi}} iş gününde kargoda
+İsme özel ahşap sopa · 2 iş gününde kargoda
 ↓ İsmini yaz
 ```
 Link: **ürün sayfası** (ana sayfa değil)
@@ -273,11 +278,12 @@ Bu `{{ }}` alanları dolunca metinlerin tamamı hazır olur:
 
 | Bilgi | Nerede kullanılıyor |
 |---|---|
-| Ahşap cinsi | Ürün açıklaması, SSS |
-| Boy (cm) + ağırlık (gr) | Ürün açıklaması, SSS, kargo ayarı |
-| Hazırlık süresi (kaç iş günü) | Ürün açıklaması, ana sayfa, SSS, meta description |
-| Varyantlar (kaç boy / ton) | Ürün varyantları |
+| Ahşap cinsi (dişbudak/kayın/meşe?) | Ürün açıklaması, SSS |
+| Varyantlar (tek ürün mü, boy/ton seçeneği var mı) | Ürün varyantları |
+| Fiyat | Ürün sayfası |
 | WhatsApp numarası | İletişim, footer |
 | Firma unvanı, adres, vergi bilgisi | Footer (yasal zorunluluk) |
-| ⭐ Gravür fontu | Canlı önizleme bloğu |
-| ⭐ Azami karakter sayısı | Şimdilik 12 girildi — ölçtüğün sayı farklıysa değişecek |
+| Ürün fotoğrafları | Galeri + canlı önizleme baz görseli |
+
+**Girilen bilgiler ✅** — 20 karakter · 66 cm · 5,5-6 cm çap · 2 iş günü · 2 desi ·
+gravür fontu: el yazısı (Dancing Script, temaya gömüldü)

@@ -23,14 +23,58 @@
 
   assign preview_image = block_settings.preview_image | default: closest.product.featured_media.preview_image
 
-  assign sample = block_settings.sample_text | default: 'HAYDAR'
-  if block_settings.uppercase
+  assign sample = block_settings.sample_text | default: 'Haydar'
+  if block_settings.text_case == 'upper'
     assign sample = sample | upcase
+  elsif block_settings.text_case == 'title'
+    assign sample = sample | capitalize
   endif
 
   assign skip_key = property_key | append: ' tercihi'
   assign skip_property_name = 'properties[KEY]' | replace: 'KEY', skip_key
+
+  # Gravür yazı tipi. "script" temaya gömülü el yazısı fontudur (Dancing Script),
+  # atölyedeki kazıma fontuyla eşleşsin diye seçilebilir yapıldı.
+  case block_settings.font_style
+    when 'heading'
+      assign engraving_font_stack = 'var(--font-heading--family)'
+      assign engraving_font_weight = '700'
+    when 'body'
+      assign engraving_font_stack = 'var(--font-body--family)'
+      assign engraving_font_weight = '400'
+    else
+      assign engraving_font_stack = '"BatCraft Gravur", "Segoe Script", cursive'
+      assign engraving_font_weight = '700'
+  endcase
 -%}
+
+{%- comment -%}
+  El yazısı gravür fontu temaya gömülü (harici istek yok).
+  Türkçe karakterler latin + latin-ext alt kümelerine dağılmış durumda,
+  bu yüzden iki @font-face gerekiyor: ı U+0131 latin'de, ğ/ş/İ latin-ext'te.
+{%- endcomment -%}
+{% style %}
+  @font-face {
+    font-family: 'BatCraft Gravur';
+    src: url({{ 'gravur-latin.woff2' | asset_url }}) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2212, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-family: 'BatCraft Gravur';
+    src: url({{ 'gravur-latin-ext.woff2' | asset_url }}) format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+      U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+      U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+{% endstyle %}
 
 <div
   class="name-engraving spacing-style"
@@ -50,8 +94,8 @@
         --engrave-max-width: {{ block_settings.text_max_width }}%;
         --engrave-color: {{ block_settings.text_color }};
         --engrave-shadow-opacity: {{ block_settings.text_emboss | divided_by: 100.0 }};
-        --engrave-font: {{ block_settings.engraving_font.family }}, {{ block_settings.engraving_font.fallback_families }};
-        --engrave-font-weight: {{ block_settings.engraving_font.weight }};
+        --engrave-font: {{ engraving_font_stack }};
+        --engrave-font-weight: {{ engraving_font_weight }};
       "
     >
       {{
@@ -98,7 +142,7 @@
         autocomplete="off"
         autocapitalize="characters"
         spellcheck="false"
-        data-uppercase="{{ block_settings.uppercase }}"
+        data-case="{{ block_settings.text_case }}"
         aria-describedby="{{ input_id }}-count"
         {% if block_settings.required %}
           required
@@ -208,8 +252,12 @@
     color: var(--color-input-text) !important;
   }
 
-  name-engraving-component .name-engraving__input[data-uppercase='true'] {
+  name-engraving-component .name-engraving__input[data-case='upper'] {
     text-transform: uppercase;
+  }
+
+  name-engraving-component .name-engraving__input[data-case='title'] {
+    text-transform: capitalize;
   }
 
   name-engraving-component .name-engraving__count {
@@ -292,10 +340,10 @@
       "id": "max_length",
       "label": "En fazla karakter",
       "min": 3,
-      "max": 30,
+      "max": 40,
       "step": 1,
-      "default": 12,
-      "info": "Numunede fiziksel olarak ölçtüğün sayıyı gir."
+      "default": 20,
+      "info": "Atölyeden gelen bilgi: 20 karakter sığıyor."
     },
     {
       "type": "checkbox",
@@ -304,11 +352,16 @@
       "default": true
     },
     {
-      "type": "checkbox",
-      "id": "uppercase",
-      "label": "Otomatik büyük harfe çevir",
-      "default": true,
-      "info": "Türkçe kurallarına göre çevrilir (i → İ)."
+      "type": "select",
+      "id": "text_case",
+      "label": "Harf düzeni",
+      "options": [
+        { "value": "title", "label": "Baş harf büyük (Haydar)" },
+        { "value": "upper", "label": "Tümü büyük (HAYDAR)" },
+        { "value": "none", "label": "Yazıldığı gibi" }
+      ],
+      "default": "title",
+      "info": "Türkçe kurallarına göre çevrilir (i → İ). El yazısı fontta \"baş harf büyük\" doğru görünür."
     },
     {
       "type": "text",
@@ -346,15 +399,20 @@
       "type": "text",
       "id": "sample_text",
       "label": "Örnek isim",
-      "default": "HAYDAR",
+      "default": "Haydar",
       "info": "Müşteri yazmaya başlamadan önce soluk gösterilir."
     },
     {
-      "type": "font_picker",
-      "id": "engraving_font",
+      "type": "select",
+      "id": "font_style",
       "label": "Gravür fontu",
-      "default": "assistant_n7",
-      "info": "Atölyenin kazımada kullandığı fontla aynı olmalı."
+      "options": [
+        { "value": "script", "label": "El yazısı (Dancing Script)" },
+        { "value": "heading", "label": "Tema başlık fontu (Montserrat)" },
+        { "value": "body", "label": "Tema gövde fontu (Inter)" }
+      ],
+      "default": "script",
+      "info": "Atölyenin kazımada kullandığı fontla aynı olmalı. El yazısı fontu temaya gömülü, Türkçe karakterleri tam destekliyor."
     },
     {
       "type": "color",
@@ -425,7 +483,8 @@
       "min": -0.05,
       "max": 0.5,
       "step": 0.01,
-      "default": 0.08
+      "default": 0,
+      "info": "El yazısı fontta 0 bırak — harfler birbirine bağlı yazılıyor."
     },
     {
       "type": "range",

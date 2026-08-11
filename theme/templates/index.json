@@ -80,23 +80,23 @@
               "settings": {
                 "heading": "Sopaya yazılacak isim",
                 "description": "Büyük harfle kazınır. Yazdıkça yukarıda görürsün.",
-                "placeholder": "Örn. HAYDAR",
+                "placeholder": "Örn. Haydar",
                 "property_key": "İsim",
-                "max_length": 12,
+                "max_length": 20,
                 "required": true,
-                "uppercase": true,
                 "allow_skip": true,
                 "skip_label": "İsim yazılmasın, düz kalsın",
-                "sample_text": "HAYDAR",
-                "engraving_font": "assistant_n7",
+                "sample_text": "Haydar",
                 "text_color": "#3b2a1a",
                 "text_x": 50,
                 "text_y": 50,
                 "text_rotation": 0,
                 "text_size": 4,
                 "text_max_width": 55,
-                "letter_spacing": 0.08,
-                "text_emboss": 45
+                "letter_spacing": 0,
+                "text_emboss": 45,
+                "text_case": "title",
+                "font_style": "script"
               },
               "blocks": {},
               "block_order": []
@@ -132,7 +132,7 @@
             "guven": {
               "type": "text",
               "settings": {
-                "text": "<p>Kazımadan önce yazımı WhatsApp'tan teyit ediyoruz.<br>Hediyeye hazır ambalajında gönderiliyor.</p>",
+                "text": "<p>66 cm · 5,5-6 cm çap · 2 iş gününde kargoda<br>Kazımadan önce yazımı WhatsApp'tan teyit ediyoruz.</p>",
                 "type_preset": "rte",
                 "width": "100%"
               },
@@ -417,7 +417,7 @@
                 "c": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>En fazla 12 karakter. Boşluk da bir karakter sayılıyor. Yazarken sayaç kalan hakkını gösteriyor.</p>",
+                    "text": "<p>En fazla 20 karakter. Boşluk da bir karakter sayılıyor. Yazarken sayaç kalan hakkını gösteriyor.</p>",
                     "width": "100%"
                   },
                   "blocks": {},
@@ -501,11 +501,31 @@
                 "c": {
                   "type": "text",
                   "settings": {
-                    "text": "<p>Sipariş onayından sonra birkaç iş günü içinde kargoya veriliyor. Kargo süresi şehrine göre 1-3 gün.</p>",
+                    "text": "<p>Sipariş onayından sonra 2 iş günü içinde kargoya veriliyor. Kargo süresi şehrine göre 1-3 gün.</p>",
                     "width": "100%"
                   },
                   "blocks": {},
                   "block_order": []
+                }
+              },
+              "block_order": [
+                "c"
+              ]
+            },
+            "s6": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Ölçüleri nedir?",
+                "open_by_default": false
+              },
+              "blocks": {
+                "c": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>66 cm uzunluğunda, en geniş yerinde 5,5-6 cm.</p>",
+                    "width": "100%"
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
@@ -518,7 +538,8 @@
             "s2",
             "s3",
             "s4",
-            "s5"
+            "s5",
+            "s6"
           ]
         }
       },
