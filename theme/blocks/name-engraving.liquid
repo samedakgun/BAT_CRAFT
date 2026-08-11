@@ -1,0 +1,492 @@
+{% comment %}
+  İsim Gravürü — canlı önizlemeli kişiselleştirme bloğu.
+
+  Müşteri ismini yazdıkça sopa görselinin üzerinde gravür fontuyla belirir.
+  Girilen değer line item property olarak siparişe, sipariş e-postasına ve
+  kargo fişine düşer. Ek uygulama gerekmez.
+
+  Kurulum notları:
+  - "Gravür görseli" olarak sopanın düz (isimsiz) fotoğrafını seç.
+  - Yazı konumunu (X/Y), açıyı ve boyutu tema editöründen ayarla.
+  - Fontu ATÖLYENİN KULLANDIĞI FONTLA AYNI seç. Farklıysa müşteri
+    "beklediğim gibi gelmedi" der. Bkz. GELISTIRME-PLANI.md 3.1.5
+{% endcomment %}
+
+{%- liquid
+  assign block_settings = block.settings
+  assign property_key = block_settings.property_key | default: 'İsim'
+  assign property_name = 'properties[KEY]' | replace: 'KEY', property_key
+
+  assign product_form_id = 'BuyButtons-ProductForm-' | append: section.id
+  assign input_id = 'NameEngraving-' | append: block.id
+  assign skip_id = 'NameEngravingSkip-' | append: block.id
+
+  assign preview_image = block_settings.preview_image | default: closest.product.featured_media.preview_image
+
+  assign sample = block_settings.sample_text | default: 'HAYDAR'
+  if block_settings.uppercase
+    assign sample = sample | upcase
+  endif
+
+  assign skip_key = property_key | append: ' tercihi'
+  assign skip_property_name = 'properties[KEY]' | replace: 'KEY', skip_key
+-%}
+
+<div
+  class="name-engraving spacing-style"
+  style="{% render 'spacing-style', settings: block_settings %}"
+  {{ block.shopify_attributes }}
+>
+  {%- if preview_image != blank -%}
+    <div
+      class="name-engraving__stage"
+      ref="stage"
+      style="
+        --engrave-x: {{ block_settings.text_x }}%;
+        --engrave-y: {{ block_settings.text_y }}%;
+        --engrave-rotate: {{ block_settings.text_rotation }}deg;
+        --engrave-size: {{ block_settings.text_size }}cqw;
+        --engrave-tracking: {{ block_settings.letter_spacing }}em;
+        --engrave-max-width: {{ block_settings.text_max_width }}%;
+        --engrave-color: {{ block_settings.text_color }};
+        --engrave-shadow-opacity: {{ block_settings.text_emboss | divided_by: 100.0 }};
+        --engrave-font: {{ block_settings.engraving_font.family }}, {{ block_settings.engraving_font.fallback_families }};
+        --engrave-font-weight: {{ block_settings.engraving_font.weight }};
+      "
+    >
+      {{
+        preview_image
+        | image_url: width: 1400
+        | image_tag:
+          loading: 'lazy',
+          sizes: '(min-width: 750px) 50vw, 100vw',
+          widths: '400, 600, 800, 1000, 1200, 1400',
+          class: 'name-engraving__image',
+          alt: preview_image.alt
+      }}
+
+      <div class="name-engraving__layer" aria-hidden="true">
+        <span
+          class="name-engraving__text"
+          ref="preview"
+          data-sample="{{ sample | escape }}"
+        >{{ sample }}</span>
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="name-engraving__field">
+    {%- if block_settings.heading != blank -%}
+      <p class="name-engraving__heading">{{ block_settings.heading | escape }}</p>
+    {%- endif -%}
+
+    {%- if block_settings.description != blank -%}
+      <p class="name-engraving__description">{{ block_settings.description | escape }}</p>
+    {%- endif -%}
+
+    <div class="name-engraving__input-wrapper">
+      <input
+        ref="textInput"
+        on:input="/handleInput"
+        type="text"
+        id="{{ input_id }}"
+        name="{{ property_name }}"
+        class="field__input name-engraving__input"
+        form="{{ product_form_id }}"
+        placeholder="{{ block_settings.placeholder | escape }}"
+        maxlength="{{ block_settings.max_length }}"
+        autocomplete="off"
+        autocapitalize="characters"
+        spellcheck="false"
+        data-uppercase="{{ block_settings.uppercase }}"
+        aria-describedby="{{ input_id }}-count"
+        {% if block_settings.required %}
+          required
+          aria-required="true"
+        {% endif %}
+      >
+      <span
+        class="name-engraving__count"
+        id="{{ input_id }}-count"
+        ref="characterCount"
+        data-template="{{ block_settings.counter_label | default: '[current]/[max]' | escape }}"
+      >0/{{ block_settings.max_length }}</span>
+    </div>
+
+    <p class="name-engraving__error" ref="error" role="status" hidden></p>
+
+    {%- if block_settings.allow_skip -%}
+      <label class="name-engraving__skip" for="{{ skip_id }}">
+        <input
+          ref="skipInput"
+          on:change="/handleSkipToggle"
+          type="checkbox"
+          id="{{ skip_id }}"
+          name="{{ skip_property_name }}"
+          value="{{ block_settings.skip_label | escape }}"
+          form="{{ product_form_id }}"
+        >
+        <span>{{ block_settings.skip_label | escape }}</span>
+      </label>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  name-engraving-component {
+    display: block;
+    width: 100%;
+  }
+
+  name-engraving-component .name-engraving__stage {
+    position: relative;
+    container-type: inline-size;
+    overflow: hidden;
+    border-radius: var(--style-border-radius-inputs, 0);
+    margin-block-end: var(--padding-md);
+  }
+
+  name-engraving-component .name-engraving__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  name-engraving-component .name-engraving__layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  name-engraving-component .name-engraving__text {
+    position: absolute;
+    left: var(--engrave-x);
+    top: var(--engrave-y);
+    transform: translate(-50%, -50%) rotate(var(--engrave-rotate)) scale(var(--engrave-scale, 1));
+    transform-origin: center;
+    white-space: nowrap;
+    font-family: var(--engrave-font);
+    font-weight: var(--engrave-font-weight);
+    font-size: var(--engrave-size);
+    letter-spacing: var(--engrave-tracking);
+    line-height: 1;
+    color: var(--engrave-color);
+    /* Oyma hissi: üstte koyu, altta açık ince gölge */
+    text-shadow:
+      0 1px 0 rgb(255 255 255 / var(--engrave-shadow-opacity)),
+      0 -1px 1px rgb(0 0 0 / var(--engrave-shadow-opacity));
+    transition: opacity 0.15s ease;
+  }
+
+  /* Müşteri henüz yazmadıysa örnek isim soluk gösterilir */
+  name-engraving-component .name-engraving__text[data-state='sample'] {
+    opacity: 0.45;
+  }
+
+  name-engraving-component .name-engraving__text[data-state='empty'] {
+    opacity: 0;
+  }
+
+  name-engraving-component .name-engraving__heading {
+    margin: 0 0 var(--padding-2xs);
+  }
+
+  name-engraving-component .name-engraving__description {
+    font-size: min(0.85em, var(--font-paragraph--size));
+    color: rgb(var(--color-rgb, var(--color-foreground-rgb)) / var(--opacity-subdued-text));
+    margin: 0 0 var(--padding-sm);
+  }
+
+  name-engraving-component .name-engraving__input-wrapper {
+    position: relative;
+  }
+
+  name-engraving-component .name-engraving__input {
+    width: 100%;
+    padding-inline-end: 4.5rem;
+    /* stylelint-disable-next-line declaration-no-important */
+    color: var(--color-input-text) !important;
+  }
+
+  name-engraving-component .name-engraving__input[data-uppercase='true'] {
+    text-transform: uppercase;
+  }
+
+  name-engraving-component .name-engraving__count {
+    position: absolute;
+    inset-inline-end: var(--input-padding-x, 1rem);
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.8em;
+    font-variant-numeric: tabular-nums;
+    color: rgb(var(--color-rgb, var(--color-foreground-rgb)) / var(--opacity-subdued-text));
+  }
+
+  name-engraving-component .name-engraving__error {
+    margin: var(--padding-2xs) 0 0;
+    font-size: 0.85em;
+    color: var(--color-error, #b3261e);
+  }
+
+  name-engraving-component .name-engraving__error[hidden] {
+    display: none;
+  }
+
+  name-engraving-component .name-engraving__skip {
+    display: flex;
+    align-items: center;
+    gap: var(--padding-2xs);
+    margin-block-start: var(--padding-sm);
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+
+  name-engraving-component .name-engraving__field:has(.name-engraving__input:disabled) .name-engraving__input {
+    opacity: 0.5;
+  }
+{% endstylesheet %}
+
+<script
+  src="{{ 'name-engraving.js' | asset_url }}"
+  type="module"
+  fetchpriority="low"
+></script>
+
+{% schema %}
+{
+  "name": "İsim gravürü",
+  "tag": "name-engraving-component",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Metin alanı"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Başlık",
+      "default": "Sopaya yazılacak isim"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Açıklama",
+      "default": "Büyük harfle kazınır. Yazdıkça yukarıda görürsün."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Örnek metin (placeholder)",
+      "default": "Örn. HAYDAR"
+    },
+    {
+      "type": "text",
+      "id": "property_key",
+      "label": "Sipariş etiketi",
+      "default": "İsim",
+      "info": "Siparişte ve kargo fişinde bu başlıkla görünür."
+    },
+    {
+      "type": "range",
+      "id": "max_length",
+      "label": "En fazla karakter",
+      "min": 3,
+      "max": 30,
+      "step": 1,
+      "default": 12,
+      "info": "Numunede fiziksel olarak ölçtüğün sayıyı gir."
+    },
+    {
+      "type": "checkbox",
+      "id": "required",
+      "label": "Zorunlu alan",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "Otomatik büyük harfe çevir",
+      "default": true,
+      "info": "Türkçe kurallarına göre çevrilir (i → İ)."
+    },
+    {
+      "type": "text",
+      "id": "counter_label",
+      "label": "Sayaç biçimi",
+      "default": "[current]/[max]"
+    },
+    {
+      "type": "header",
+      "content": "İsimsiz seçeneği"
+    },
+    {
+      "type": "checkbox",
+      "id": "allow_skip",
+      "label": "\"İsim yazılmasın\" seçeneği sun",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "skip_label",
+      "label": "Seçenek metni",
+      "default": "İsim yazılmasın, düz kalsın"
+    },
+    {
+      "type": "header",
+      "content": "Canlı önizleme"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image",
+      "label": "Gravür görseli",
+      "info": "Boş bırakılırsa ürünün ana görseli kullanılır. Sopanın düz (isimsiz) fotoğrafını seç."
+    },
+    {
+      "type": "text",
+      "id": "sample_text",
+      "label": "Örnek isim",
+      "default": "HAYDAR",
+      "info": "Müşteri yazmaya başlamadan önce soluk gösterilir."
+    },
+    {
+      "type": "font_picker",
+      "id": "engraving_font",
+      "label": "Gravür fontu",
+      "default": "assistant_n7",
+      "info": "Atölyenin kazımada kullandığı fontla aynı olmalı."
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Yazı rengi",
+      "default": "#3b2a1a"
+    },
+    {
+      "type": "header",
+      "content": "Yazı konumu"
+    },
+    {
+      "type": "range",
+      "id": "text_x",
+      "label": "Yatay konum",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "text_y",
+      "label": "Dikey konum",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "text_rotation",
+      "label": "Açı",
+      "min": -90,
+      "max": 90,
+      "step": 1,
+      "unit": "°",
+      "default": 0,
+      "info": "Sopa görselde eğik duruyorsa buradan hizala."
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Yazı boyutu",
+      "min": 1,
+      "max": 15,
+      "step": 0.5,
+      "default": 4,
+      "info": "Görsel genişliğine oranlı."
+    },
+    {
+      "type": "range",
+      "id": "text_max_width",
+      "label": "Yazının sığacağı genişlik",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 55,
+      "info": "Uzun isimler bu genişliğe otomatik küçültülür."
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Harf aralığı",
+      "min": -0.05,
+      "max": 0.5,
+      "step": 0.01,
+      "default": 0.08
+    },
+    {
+      "type": "range",
+      "id": "text_emboss",
+      "label": "Oyma etkisi",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 45,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "İsim gravürü",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

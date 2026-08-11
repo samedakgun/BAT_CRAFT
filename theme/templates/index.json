@@ -1,0 +1,538 @@
+/*
+ * BAT CRAFT — tek ürün odaklı şablon.
+ * Horizon'un demo içeriği kaldırıldı.
+ */{
+  "sections": {
+    "urun": {
+      "type": "featured-product-information",
+      "settings": {
+        "product": "",
+        "gap": 48,
+        "equal_columns": true,
+        "padding-block-start": 32,
+        "padding-block-end": 56
+      },
+      "blocks": {
+        "media-gallery": {
+          "type": "_featured-product-information-carousel",
+          "static": true,
+          "settings": {
+            "constrain_to_viewport": true,
+            "media_fit": "contain",
+            "hide_variants": true,
+            "thumbnail_position": "bottom"
+          },
+          "blocks": {},
+          "block_order": []
+        },
+        "product-details": {
+          "type": "_product-details",
+          "static": true,
+          "settings": {
+            "gap": 24,
+            "sticky_details_desktop": true,
+            "padding-block-start": 8,
+            "padding-block-end": 8
+          },
+          "blocks": {
+            "baslik": {
+              "type": "group",
+              "name": "Başlık",
+              "settings": {
+                "content_direction": "column",
+                "gap": 8
+              },
+              "blocks": {
+                "urun_adi": {
+                  "type": "product-title",
+                  "name": "Ürün adı",
+                  "settings": {
+                    "type_preset": "h4"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                },
+                "fiyat": {
+                  "type": "price",
+                  "name": "Fiyat",
+                  "settings": {
+                    "show_installments": true,
+                    "show_tax_info": false
+                  },
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "urun_adi",
+                "fiyat"
+              ]
+            },
+            "varyant": {
+              "type": "variant-picker",
+              "name": "Varyantlar",
+              "blocks": {},
+              "block_order": []
+            },
+            "gravur": {
+              "type": "name-engraving",
+              "name": "İsim gravürü",
+              "settings": {
+                "heading": "Sopaya yazılacak isim",
+                "description": "Büyük harfle kazınır. Yazdıkça yukarıda görürsün.",
+                "placeholder": "Örn. HAYDAR",
+                "property_key": "İsim",
+                "max_length": 12,
+                "required": true,
+                "uppercase": true,
+                "allow_skip": true,
+                "skip_label": "İsim yazılmasın, düz kalsın",
+                "sample_text": "HAYDAR",
+                "engraving_font": "assistant_n7",
+                "text_color": "#3b2a1a",
+                "text_x": 50,
+                "text_y": 50,
+                "text_rotation": 0,
+                "text_size": 4,
+                "text_max_width": 55,
+                "letter_spacing": 0.08,
+                "text_emboss": 45
+              },
+              "blocks": {},
+              "block_order": []
+            },
+            "sepet": {
+              "type": "buy-buttons",
+              "name": "Sepete ekle",
+              "settings": {
+                "stacking": true
+              },
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "static": true,
+                  "blocks": {},
+                  "block_order": []
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "static": true,
+                  "blocks": {},
+                  "block_order": []
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": []
+            },
+            "guven": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Kazımadan önce yazımı WhatsApp'tan teyit ediyoruz.<br>Hediyeye hazır ambalajında gönderiliyor.</p>",
+                "type_preset": "rte",
+                "width": "100%"
+              },
+              "blocks": {},
+              "block_order": []
+            }
+          },
+          "block_order": [
+            "baslik",
+            "varyant",
+            "gravur",
+            "sepet",
+            "guven"
+          ]
+        }
+      },
+      "block_order": []
+    },
+    "serit": {
+      "type": "marquee",
+      "settings": {
+        "speed": 12,
+        "padding-block-start": 20,
+        "padding-block-end": 20
+      },
+      "blocks": {
+        "yazi": {
+          "type": "text",
+          "settings": {
+            "text": "ADI YAZILIR. KAPINA GELİR.",
+            "type_preset": "custom",
+            "font": "var(--font-heading--family)",
+            "font_size": "var(--font-size--h2)",
+            "line_height": "tight",
+            "letter_spacing": "tight",
+            "case": "uppercase",
+            "wrap": "nowrap",
+            "width": "fit-content"
+          },
+          "blocks": {},
+          "block_order": []
+        }
+      },
+      "block_order": [
+        "yazi"
+      ]
+    },
+    "oyma": {
+      "type": "media-with-content",
+      "settings": {
+        "media_width": "medium",
+        "media_height": "60svh",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      },
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {},
+          "blocks": {},
+          "block_order": []
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center"
+          },
+          "blocks": {
+            "etiket": {
+              "type": "text",
+              "settings": {
+                "text": "<p>NASIL YAPILIYOR</p>",
+                "type_preset": "h6"
+              },
+              "blocks": {},
+              "block_order": []
+            },
+            "govde": {
+              "type": "group",
+              "settings": {
+                "height": "fit",
+                "gap": 16
+              },
+              "blocks": {
+                "baslik": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h2>Sticker değil. Oyma.</h2>",
+                    "type_preset": "h3"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                },
+                "metin": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Lazer ahşabın içine giriyor. Yüzeye yapıştırılmış bir şey değil — ahşabın kendisi. Elini gezdirince hissedersin, zamanla da silinmez.</p>",
+                    "type_preset": "rte",
+                    "max_width": "narrow"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "baslik",
+                "metin"
+              ]
+            }
+          },
+          "block_order": [
+            "etiket",
+            "govde"
+          ]
+        }
+      },
+      "block_order": []
+    },
+    "neden": {
+      "type": "section",
+      "settings": {
+        "section_height": "small",
+        "content_direction": "column",
+        "padding-block-start": 48,
+        "padding-block-end": 48,
+        "gap": 32
+      },
+      "blocks": {
+        "satir": {
+          "type": "group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "gap": 32,
+            "width": "fill"
+          },
+          "blocks": {
+            "m1": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "gap": 8,
+                "width": "fill"
+              },
+              "blocks": {
+                "b": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h3>Tek. Kopyası yok.</h3>",
+                    "type_preset": "h5"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                },
+                "m": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Üzerinde senin yazdığın isim var. Aynısından ikinci bir tane yok.</p>",
+                    "type_preset": "rte"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "b",
+                "m"
+              ]
+            },
+            "m2": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "gap": 8,
+                "width": "fill"
+              },
+              "blocks": {
+                "b": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h3>Gerçek ahşap, gerçek gravür.</h3>",
+                    "type_preset": "h5"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                },
+                "m": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Baskı değil, sticker değil. Ahşaba oyulmuş.</p>",
+                    "type_preset": "rte"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "b",
+                "m"
+              ]
+            },
+            "m3": {
+              "type": "group",
+              "settings": {
+                "content_direction": "column",
+                "gap": 8,
+                "width": "fill"
+              },
+              "blocks": {
+                "b": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h3>Hediyeye hazır.</h3>",
+                    "type_preset": "h5"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                },
+                "m": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Kutusunda gelir. Açan kişi ismini görür.</p>",
+                    "type_preset": "rte"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "b",
+                "m"
+              ]
+            }
+          },
+          "block_order": [
+            "m1",
+            "m2",
+            "m3"
+          ]
+        }
+      },
+      "block_order": [
+        "satir"
+      ]
+    },
+    "sss": {
+      "type": "section",
+      "settings": {
+        "section_height": "small",
+        "content_direction": "column",
+        "padding-block-start": 48,
+        "padding-block-end": 64,
+        "gap": 24
+      },
+      "blocks": {
+        "baslik": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Sık sorulanlar</h2>",
+            "type_preset": "h3"
+          },
+          "blocks": {},
+          "block_order": []
+        },
+        "liste": {
+          "type": "accordion",
+          "settings": {
+            "dividers": true,
+            "icon": "caret"
+          },
+          "blocks": {
+            "s1": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Kaç karakter yazabilirim?",
+                "open_by_default": true
+              },
+              "blocks": {
+                "c": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>En fazla 12 karakter. Boşluk da bir karakter sayılıyor. Yazarken sayaç kalan hakkını gösteriyor.</p>",
+                    "width": "100%"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "c"
+              ]
+            },
+            "s2": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Türkçe karakter yazabilir miyim?",
+                "open_by_default": false
+              },
+              "blocks": {
+                "c": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Evet. Ğ, Ş, İ, Ç, Ö, Ü hepsi kazınıyor. Emoji ve sembol kazınamıyor.</p>",
+                    "width": "100%"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "c"
+              ]
+            },
+            "s3": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Yanlış isim yazarsam ne olur?",
+                "open_by_default": false
+              },
+              "blocks": {
+                "c": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Kazımadan önce WhatsApp'tan sana yazıp onayını alıyoruz. O aşamada değiştirebilirsin.</p>",
+                    "width": "100%"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "c"
+              ]
+            },
+            "s4": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "İade edebilir miyim?",
+                "open_by_default": false
+              },
+              "blocks": {
+                "c": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Sana özel üretilen ürünlerde iade hakkı bulunmuyor (Mesafeli Sözleşmeler Yönetmeliği m.15/ç). Bu yüzden kazımadan önce mutlaka teyit alıyoruz. Ürün hatalı veya hasarlı gelirse tabii ki değiştiriyoruz.</p>",
+                    "width": "100%"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "c"
+              ]
+            },
+            "s5": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "Kaç günde gelir?",
+                "open_by_default": false
+              },
+              "blocks": {
+                "c": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Sipariş onayından sonra birkaç iş günü içinde kargoya veriliyor. Kargo süresi şehrine göre 1-3 gün.</p>",
+                    "width": "100%"
+                  },
+                  "blocks": {},
+                  "block_order": []
+                }
+              },
+              "block_order": [
+                "c"
+              ]
+            }
+          },
+          "block_order": [
+            "s1",
+            "s2",
+            "s3",
+            "s4",
+            "s5"
+          ]
+        }
+      },
+      "block_order": [
+        "baslik",
+        "liste"
+      ]
+    }
+  },
+  "order": [
+    "urun",
+    "serit",
+    "oyma",
+    "neden",
+    "sss"
+  ]
+}
