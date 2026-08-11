@@ -631,24 +631,16 @@ Yerleşim:   Advantage+ Placements (otomatik bırak)
 ---
 ---
 
-## 📍 ŞU AN NEREDEYİZ
+## 📍 ŞU AN NEREDEYİZ — ⏸️ ARA VERİLDİ
 
-**Marka: BAT CRAFT.** İsim ✅ · Logo ✅ · Domain ✅ · Instagram ✅ · Shopify hesabı ✅
+**Marka: BAT CRAFT.** İsim ✅ Logo ✅ Domain ✅ Instagram ✅ Shopify ✅ GitHub ✅
 
-**FAZ 4 — Site kurulumu.** Bende hazır olanlar:
-- ✅ Marka renk paleti + tipografi temaya işlendi
-- ✅ Gravür bloğu ürün sayfasına yerleştirildi
-- ✅ Tüm site metinleri yazıldı → `icerik/SITE-METINLERI.md`
-- ✅ `batcraft-tema.zip` yüklemeye hazır
+**FAZ 4 — Site kurulumu.** Tema **tek ürün odaklı** olarak yeniden kuruldu,
+Horizon'un demo içeriği tamamen kaldırıldı. Detay: `HANDOFF.md`
 
-**🧑 Sıradaki senin işin — bu sırayla:**
+Devam edince ilk üç iş:
+1. 🧑 `batcraft-tema.zip`'i Shopify'a yükle ve yayınla
+2. 🧑 `git push -u origin main`
+3. 🧑 Ürünü oluştur → tema editöründe **Ürün bölümüne o ürünü seç**
 
-1. **4.1.1** Temayı yükle: Online Store → Themes → Add theme → Upload zip →
-   `batcraft-tema.zip` → **Publish**
-2. **4.1.2 / 4.1.3** Mağaza adı, para birimi TRY, saat dilimi İstanbul, dil Türkçe
-3. **4.3.1** Ürünü oluştur (metinler hazır) — görsel yoksa geçici bir görselle de olur
-4. **4.3.2 / 4.3.3** Sayfaları ve koleksiyonları gir
-5. **4.1.4** *(opsiyonel ama işi çok hızlandırır)* Theme Access token ver →
-   canlı test edip düzeltmeleri ben yaparım
-
-**🤖 Ben bu arada:** yasal sayfa metinleri (4.4) veya reklam metinleri (6.4).
+Ayrıntılı liste ve bekleyen bilgiler: **`HANDOFF.md`**

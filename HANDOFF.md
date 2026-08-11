@@ -2,10 +2,10 @@
 
 **Son güncelleme:** 11 Ağustos 2026
 **Marka:** BAT CRAFT — *Personalized Bats*
-**Aktif faz:** FAZ 0 sonu / FAZ 2 başı
+**Durum:** ⏸️ **Ara verildi.** Tema hazır, Shopify'a yüklenmeyi bekliyor.
 
-> **Kapsam notu:** Ürün üretimi ve tedarik **tamamlandı.** Plan sadece dijital
-> tarafı kapsıyor: marka kimliği, site, sosyal medya, reklam, sipariş akışı.
+> **Kapsam:** Ürün üretimi ve tedarik tamamlandı. Maliyet/fiyat hesabı ve pazar
+> taraması **yayın sonrasına** bırakıldı. Şu an sadece dijital kurulum yapılıyor.
 
 ---
 
@@ -13,109 +13,148 @@
 
 | | |
 |---|---|
-| **Adı** | **BAT CRAFT** |
+| **Görünen ad** | **BAT CRAFT** (logoda o yazıyor) |
 | Alt başlık | PERSONALIZED BATS |
-| Domain | `badcraftofficial.com` ⚠️ bkz. açık konu |
-| Instagram | `@badcraft.official34` ⚠️ bkz. açık konu |
-| TikTok | Açılmayacak (karar) |
-| Logo | `logo.png` — sopa + taç + wordmark |
+| Domain | `badcraftofficial.com` — Shopify destek talebi onaylanırsa `batcraft`'a geçilecek |
+| Instagram | `@badcraft.official34` — sonra düzenlenecek |
+| TikTok | Açılmayacak |
+| Shopify | `bezbol.myshopify.com` · admin: `admin.shopify.com/store/bezbol` |
+| GitHub | `github.com/samedakgun/BAT_CRAFT` |
 | Renk | Kırık beyaz `#F7F5F2` · Kömür `#111111` · Ahşap `#A9714B` · CTA `#8B5A2B` |
-| Font | Başlık **Montserrat** · Gövde **Inter** · Gravür → atölye fontu (bekleniyor) |
+| Font | Başlık **Montserrat** · Gövde **Inter** |
 
 ---
 
-## Tamamlananlar ✅
+## ✅ Bu turda tamamlananlar
 
-- [x] Araştırma: Meta reklam politikası, 6136 sayılı kanun, Shopify Horizon,
-      Türkiye ödeme altyapısı, düşük bütçeli Meta stratejisi, e-ticaret yasal
-      zorunlulukları → `arastirma/ARASTIRMA-BULGULARI.md`
-- [x] Yasal risk analizi ve konumlandırma kararı → `yasal/YASAL-RISKLER.md`
-- [x] Marka kimliği → `marka/MARKA-KIMLIGI.md` (renk/font logodan türetildi)
-- [x] Dijital odaklı 10 fazlık plan → `GELISTIRME-PLANI.md`
-- [x] **Marka adı: BAT CRAFT** · Logo · Domain · Instagram hesabı
-- [x] **İsim gravürü bloğu + canlı önizleme kodu yazıldı** (aşağıda)
+### Tema — tek ürün odaklı yeniden kuruldu
+Horizon v4.1.3, klasör artık `theme/` (uzun export adı sadeleştirildi).
+
+- **Ana sayfa (`templates/index.json`) sıfırdan yazıldı.** Horizon'un demo içeriği
+  (dağ manzarası hero, "Browse our latest products", ürün listesi) **silindi.**
+  Yerine 5 bölümlük tek ürün akışı:
+  1. **Ürün** — galeri + başlık + fiyat + varyant + **isim gravürü + canlı önizleme**
+     + sepete ekle. Müşteri ana sayfadan çıkmadan ismini yazıp sipariş verebiliyor.
+  2. **Şerit** — akan yazı: *ADI YAZILIR. KAPINA GELİR.*
+  3. **Nasıl yapılıyor** — görsel + *"Sticker değil. Oyma."*
+  4. **Üç madde** — Tek/kopyası yok · Gerçek gravür · Hediyeye hazır
+  5. **SSS** — 5 soruluk akordiyon (karakter limiti, Türkçe harf, yanlış isim,
+     iade, teslimat)
+- **Header sadeleştirildi:** duyuru çubuğu Türkçe ("Kişiye özel üretim · Hediyeye
+  hazır ambalaj"), **arama + ülke seçici + dil seçici kapatıldı** (tek ürün, tek
+  pazar, tek dil — hepsi gereksiz gürültüydü).
+- **Footer temizlendi:** "Join our email list" → Türkçe, Horizon'un varsayılan
+  Facebook/TikTok/Twitter/YouTube linkleri **silindi**, sadece Instagram bırakıldı,
+  "Powered by Shopify" kapatıldı.
+- **Marka renk paleti + tipografi** `config/settings_data.json`'a işlendi,
+  buton köşeleri 14px → 4px (logonun keskin diline uygun).
+- **Ürün şablonu** (`templates/product.json`) — gravür bloğu varyant seçici ile
+  sepete ekle arasına yerleştirildi.
+
+Tüm şablon JSON'ları doğrulandı ✅
+
+### İsim gravürü bloğu
+`theme/blocks/name-engraving.liquid` + `theme/assets/name-engraving.js`
+- `properties[İsim]` line item property → sipariş, e-posta, kargo fişi
+- Yazdıkça görselin üzerinde canlı gravür önizlemesi
+- Uzun isimleri alana otomatik sığdırma
+- Türkçe büyük harf (`i → İ`), kazınamayan karakter filtresi, karakter sayacı
+- "İsim yazılmasın" seçeneği
+- Ek uygulama gerekmiyor (aylık ~20 $ tasarruf)
+
+### GitHub
+Proje `git` deposuna alındı, **479 dosya commit'lendi**, remote eklendi.
+⚠️ **Push edilmedi** — GitHub kimlik doğrulaması sende. Komut aşağıda.
+
+### Shopify — mevcut durum (kontrol edildi)
+| | |
+|---|---|
+| Mağaza adı | BAT CRAFT ✅ |
+| Para birimi | Türk Lirası (TRY ₺) ✅ |
+| Bölge / adres | Türkiye · İstanbul ✅ |
+| Admin dili | Türkçe ✅ |
+| Mağaza görünürlüğü | **Gizli** (şifre korumalı) ✅ doğru |
+| Ürünler | **Boş** — henüz ürün yok |
+| Canlı tema | Hâlâ Horizon'un **demo hâli** — yeni tema yüklenmedi |
+| İletişim e-postası | `samedakgun88@gmail.com` — kurumsal maile çevrilecek |
 
 ---
 
-## 🛠️ Yazılan kod: İsim Gravürü bloğu (Faz 4.2)
+## 🔜 Devam edince ilk yapılacaklar
 
-**Dosyalar:**
-- `theme_export__.../blocks/name-engraving.liquid`
-- `theme_export__.../assets/name-engraving.js`
+### 🧑 SEN
 
-**Ne yapıyor:**
-- İsim girişi → `properties[İsim]` line item property → sipariş ekranına, sipariş
-  e-postasına ve kargo fişine otomatik düşer (ek uygulama gerekmez)
-- ⭐ Müşteri yazdıkça sopa görselinin üzerinde ismi gravür fontuyla canlı gösterir
-- Uzun isimleri gravür alanına **otomatik sığdırır**
-- Türkçe büyük harf (`i → İ`, standart `toUpperCase`'in yaptığı `I` değil)
-- Kazınamayan karakterleri (emoji, sembol) girişte ayıklar + uyarı verir
-- Karakter sayacı, zorunlu alan, "İsim yazılmasın" seçeneği
+**1. Temayı yükle** *(2 dakika)*
+`batcraft-tema.zip` → Online Mağaza → Temalar → aşağıda **Taslak temalar** →
+**İçe aktar** → zip'i seç → yüklendikten sonra **Yayınla**.
+> Ben yükleyemedim: Shopify admin arayüzü shadow DOM kullanıyor, tarayıcı
+> otomasyonu "İçe aktar" butonuna erişemiyor.
 
-**Doğrulananlar:** JS sözdizimi ✅ · Blok şeması JSON ✅ · Horizon konvansiyonu ✅
-**Doğrulanamayanlar (canlı mağaza gerekiyor):** görsel hizalama, sepet/checkout
-akışı, mobil görünüm → 4.1.3'te Theme Access token verince test edilecek.
+**2. GitHub'a gönder** *(1 dakika)*
+```bash
+cd ~/Desktop/bezbol_sopası
+git push -u origin main
+```
+Kimlik sorarsa: kullanıcı adı `samedakgun`, şifre yerine **GitHub Personal Access
+Token** (github.com/settings/tokens → repo yetkisi).
 
-**Bloğu kurmak için bekleyen bilgiler:** gravür fontu (0.1.1), azami karakter
-sayısı (0.1.2), düz sopanın karşıdan çekimi (3.2.9).
+**3. Ürünü oluştur**
+Metinler hazır: `icerik/SITE-METINLERI.md` §2. Fotoğraf yoksa geçici görselle de
+olur. Oluşturduktan sonra tema editöründe **Ürün bölümüne o ürünü seç**
+(şu an boş — bu yapılmazsa ana sayfada ürün görünmez).
 
----
+**4. Sayfaları gir:** Hakkımızda · SSS · İletişim (`SITE-METINLERI.md` §4-6)
 
-## 🎯 Sıradaki işler
+**5. Menüyü düzelt:** İçerik → Menüler → "Katalog" linkini sil
+(tek ürünlü mağazada katalog anlamsız). Yerine SSS ve İletişim.
 
-### 🧑 SEN — öncelik sırasıyla
+**6. İletişim e-postasını** kurumsal adrese çevir (Ayarlar → Genel)
 
-**1. BAT/BAD tutarsızlığını kapat** (`0.5`) — 10 dakika, ~15 $
-`batcraftofficial.com` müsait, al ve asıl domain yap; `badcraftofficial.com`'u
-301 ile ona yönlendir; Instagram handle'ını `@batcraft.official` yap.
-⚠️ **Reklam başlamadan yapılmalı** — sonra link/etiket kırar.
-
-**2. Ürün bilgilerini ver** (`0.1`, 9 madde) — hepsi elinde
-En kritik ikisi: ⭐ **gravür fontu** ve ⭐ **sopaya sığan azami karakter sayısı**.
-Kalanlar: ölçü/ağırlık, ahşap cinsi, varyantlar, birim maliyet, hazırlık süresi,
-Türkçe karakter durumu, kargo desisi.
-
-**3. Shopify hesabını aç** (`2.4`) → hemen ardından **ödeme başvurusu** (`2.5`)
-Ödeme onayı 1–5 iş günü sürüyor; en uzun kuyruk bu, erken başlat.
-
-**4. Logo eksiklerini tamamla** (`0.6`) — yazım hatası, daire kırpımlı IG versiyonu,
-vektör, şeffaf, tek renk, yatay, favicon
-
-### 🤖 BEN — istediğin an başlarım
-
-- **0.3** Pazar taraması (Etsy/Trendyol fiyat, Meta Ad Library, IG rakipler)
-- **4.4** Yasal sayfa metinleri (MSS, ön bilgilendirme, KVKK, iade) taslakları
+### 🤖 BEN — hazır bekleyen işler
+- **4.4** Yasal sayfa metinleri (mesafeli satış, ön bilgilendirme, KVKK, iade)
 - **6.4** Reklam metinleri (9 primary text + 6 headline)
 - **5.1.5** Instagram bio + ilk 9 gönderi planı
-- **0.6** Logo dosya seti (yazım düzeltmesi, IG versiyonu, favicon)
+- Gravür bloğunun canlı testi — **Theme Access token** verirsen doğrudan
+  mağazada test edip düzeltirim
 
 ---
 
-## Açık konular 🟡
+## 🟡 Beni bekleyen bilgiler
 
-| Konu | Durum |
+Bunlar gelmeden site "tam" olmuyor:
+
+| Bilgi | Nerede kullanılacak |
 |---|---|
-| **BAT vs BAD** yazımı | Karar bekliyor → `MARKA-KIMLIGI.md` §13 |
-| Gravür fontu | Samed'de, iletilecek (0.1.1) |
-| Azami karakter sayısı | Samed'de, iletilecek (0.1.2) |
-| Birim maliyet / satış fiyatı | 0.1.6 gelince hesaplanacak |
-| PayTR mi iyzico mu | Şirket kurulumuna bağlı |
-| Reklam bütçesi | Marj hesabına bağlı |
+| ⭐ **Gravür fontu** (dosya/ad) | Canlı önizleme — şu an varsayılan font |
+| ⭐ **Azami karakter sayısı** | Şimdilik **12** girildi |
+| Düz sopanın karşıdan fotoğrafı | Canlı önizlemenin baz görseli |
+| Ahşap cinsi, boy, ağırlık | Ürün açıklaması, SSS, kargo |
+| Hazırlık süresi (kaç iş günü) | Ürün sayfası, SSS, meta description |
+| Varyantlar (kaç boy/ton) | Ürün varyantları |
+| WhatsApp numarası | İletişim, footer |
+| Firma unvanı, adres, vergi no | Footer (yasal zorunluluk) |
+
+`icerik/SITE-METINLERI.md` içindeki `{{ }}` alanları bunları bekliyor.
+
+---
+
+## ⏸️ Yayın sonrasına ertelenenler
+- Birim maliyet / marj hesabı (satış fiyatı ÷ COGS ≥ 3.5 kuralı)
+- Pazar taraması (Etsy, Trendyol, Meta Ad Library)
+- Şirket kurulumu, ETBİS
+- ⚠️ **Ödeme altyapısı (PayTR/iyzico) vergi levhası istiyor** — para tahsil
+  edebilmek için şirket şart. Site tasarımı bundan bağımsız ilerliyor.
 
 ---
 
 ## Bilinen riskler ⚠️
 
-1. **Konumlandırma riski (en yüksek).** "Güvenlik/savunma" dili kullanılırsa Meta
-   reklam hesabı kapanır, müşteri 6136'dan risk alır. Tüm metinler
-   hediyelik/kişiselleştirme çerçevesinde kalacak. → `yasal/YASAL-RISKLER.md`
-2. **Marka yazımı tutarsızlığı.** BAT/BAD ikiliği doğrudan trafik ve marka
-   aramalarını kaybettirir. Ucuz ve hızlı çözülür, geciktikçe pahalılaşır.
-3. **Marj riski.** Satış fiyatı ÷ COGS < 3.5 ise iş modeli reklamla dönmez.
-4. **Font uyumsuzluğu.** Sitedeki canlı önizleme fontu ile kazınan font farklıysa
-   "beklediğim gibi gelmedi" şikâyetleri başlar.
-5. **Kargo desisi.** Uzun ürün kargo maliyetini yükseltir — marja dahil edilmeli.
-6. **Logo Meta riski.** Gerçekçi büyük sopa görseli reklam kreatiflerinde riskli;
-   reklamlarda wordmark ağırlıklı versiyon kullanılacak.
-7. **Bütçe eşiği.** Meta'da günlük 300 TL altında algoritma learning phase'den
-   çıkamıyor. İlk hafta 2.100–3.500 TL gözden çıkarılmalı.
+1. **Konumlandırma (en yüksek).** "Güvenlik/savunma" dili Meta reklam hesabını
+   kapattırır, müşteriyi 6136'dan riske atar. Tüm metinler hediyelik çerçevesinde
+   yazıldı ve taramadan geçti. → `yasal/YASAL-RISKLER.md`
+2. **BAT/BAD yazımı.** Logo BAT, domain BAD. Destek talebi onaylanırsa çözülecek;
+   o zamana kadar görünen ad BAT CRAFT.
+3. **Marj.** Satış fiyatı ÷ COGS < 3.5 ise reklamla kâr edilmez. Henüz hesaplanmadı.
+4. **Font uyumsuzluğu.** Sitedeki önizleme fontu ≠ kazınan font olursa şikâyet gelir.
+5. **Logo Meta riski.** Reklam kreatiflerinde sopalı logo yerine wordmark kullanılacak.
+6. **Bütçe eşiği.** Meta'da günlük 300 TL altında learning phase'den çıkılamıyor.
