@@ -4,7 +4,7 @@
 Bu depo markanın **tüm dijital varlıklarını** tutar: tema kodu, marka kimliği,
 site metinleri, yasal analiz ve yol haritası.
 
-🔗 `bezbol.myshopify.com` · `badcraftofficial.com` · [@badcraft.official34](https://www.instagram.com/badcraft.official34/)
+🔗 `bezbol.myshopify.com` · `batcraftofficial.com` · [@badcraft.official34](https://www.instagram.com/badcraft.official34/)
 
 ---
 

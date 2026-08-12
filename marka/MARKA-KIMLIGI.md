@@ -1,13 +1,14 @@
 # Marka Kimliği — BAT CRAFT
 
-> **Durum:** 🟢 İsim ve logo kesinleşti (11 Ağustos 2026).
+> **Durum:** 🟢 İsim, logo ve domain kesinleşti (12 Ağustos 2026).
 
 | | |
 |---|---|
 | **Marka adı** | **BAT CRAFT** |
 | Alt başlık | PERSONALIZED BATS |
-| Domain | `badcraftofficial.com` (alındı) ⚠️ `batcraftofficial.com` müsait — bkz. §13 |
-| Instagram | `@badcraft.official34` ⚠️ `@batcraft.official` önerilir — bkz. §13 |
+| Domain | **`batcraftofficial.com`** ✅ |
+| E-posta | `merhaba@` · `siparis@` · `destek@batcraftofficial.com` |
+| Instagram | `@badcraft.official34` ⚠️ `@batcraft.official`'a çevrilecek — bkz. §13 |
 | TikTok | Açılmayacak (karar) |
 | Logo | `logo.png` — sopa + taç işareti + wordmark |
 
@@ -15,7 +16,7 @@
 
 ## 1. Tek cümlelik marka
 
-> **İsme özel oyulmuş, tek tek elde bitirilmiş dişbudak sopalar.**
+> **İsme özel oyulmuş, tek tek elde bitirilmiş ahşap sopalar.**
 
 ## 2. Misyon
 
@@ -33,7 +34,7 @@ anahtarlık → hediye seti → kurumsal hediye (B2B).
 
 1. **Üzerinde senin ismin var.** Tek. Kopyası yok.
 2. **Gerçek ahşap, gerçek gravür.** Sticker değil, baskı değil — oyulmuş.
-3. **3 iş gününde hazır, kapında.**
+3. **2 iş gününde kargoda.**
 
 ## 5. Marka DEĞİL olduğu şeyler (kırmızı çizgiler)
 
@@ -81,8 +82,8 @@ Bir zanaatkârın konuşması gibi: az kelime, net iş.
 | ✅ Böyle yaz | ❌ Böyle yazma |
 |---|---|
 | "Adı yazılır. Kapına gelir." | "Hayatınızı değiştirecek muhteşem ürünümüz!!!" |
-| "Dişbudak. 76 cm. 900 gram." | "Süper kaliteli premium lüks sopa" |
-| "3 günde hazır." | "En hızlı teslimat garantisi 🚀🔥💯" |
+| "66 cm. Ahşap. El yazısı gravür." | "Süper kaliteli premium lüks sopa" |
+| "2 günde hazır." | "En hızlı teslimat garantisi 🚀🔥💯" |
 | "Sticker değil, oyma." | "Rakiplerimizden çok daha iyi" |
 
 - Emoji: en fazla 1, çoğu zaman 0
@@ -117,11 +118,11 @@ Logodaki wordmark geometrik, ağır, tümü büyük harf bir sans. Site bunu tak
 | Başlık | **Montserrat** (700/800) | Logodaki geometrik sans'a en yakın ücretsiz eşleşme, Türkçe tam destek |
 | Alt başlık / etiket | **Montserrat** (400, geniş harf aralığı) | Logodaki "PERSONALIZED BATS" satırının aynısı |
 | Gövde metni | **Inter** | Ekranda en okunaklı, mobilde kusursuz, Türkçe tam |
-| Gravür önizlemesi | ⚠️ **Atölyenin kazıma fontu** | Bkz. aşağıdaki uyarı |
+| Gravür önizlemesi | **Dancing Script** (el yazısı) | Temaya gömüldü, Türkçe tam → `FONT-LISANS.md` |
 
-⚠️ **Sitede gösterdiğin önizleme fontu ile kazınan font AYNI olmak zorunda.**
-Farklıysa müşteri "beklediğim gibi gelmedi" der, şikâyet başlar.
-Gravür fontunu bana ilet (`GELISTIRME-PLANI.md` → 0.1.1).
+⚠️ **Sitedeki önizleme fontu ile kazınan font AYNI olmak zorunda.**
+Atölye "el yazısı" dedi, Dancing Script seçildi ve temaya gömüldü. Atölye başka
+bir el yazısı fontu kullanıyorsa haber ver — onu gömerim.
 
 ## 10. Logo — mevcut durum ve yapılacaklar
 
@@ -146,19 +147,18 @@ görsellerinde logoyu yazı ağırlıklı (wordmark) kullan**, sopalı versiyonu
 
 ## 11. Ürün adlandırma
 
-- Baz ürün: **"İsme Özel Dişbudak Sopa — 76 cm"**
-- Varyantlar: Boy (66 / 76 / 81 cm) · Ahşap tonu (Natürel / Ceviz / Kömür) ·
-  Gravür stili (Düz / Kutulu / El yazısı)
+- Baz ürün: **"İsme Özel Ahşap Beyzbol Sopası"** — 66 cm, 5,5-6 cm çap
+- Şu an **tek ürün, varyantsız.** İkinci ürün gelince: ikili set, farklı boy
 - Koleksiyon adları hediye açısını taşısın: "Hediyelik", "Baba-Oğul", "İkili Set"
 
 ## 12. Fiyatlandırma iskeleti (Faz 1'de kesinleşir)
 
-Ürün üretimi hazır; rakamlar Samed'de. `GELISTIRME-PLANI.md` → 0.1 ile alınacak.
+⏸️ Yayın sonrasına bırakıldı. Ölçü ve süre bilgileri geldi; **maliyet ve fiyat** bekleniyor.
 
 | Kalem | Değer |
 |---|---|
-| Ürün birim maliyeti (ham + gravür + ambalaj) | ? TL — 0.1.6 |
-| Kargo (desi dahil) | ? TL — 0.1.9 |
+| Ürün birim maliyeti (ham + gravür + ambalaj) | ? TL — Samed'den bekleniyor |
+| Kargo | **2 desi** — sözleşmeli fiyat girilecek |
 | İşlem/komisyon (PayTR ~%2 + Shopify %2) | satış fiyatının ~%4'ü |
 | **Toplam COGS** | ? |
 | **Satış fiyatı hedefi** | COGS × **3.5–4** (Meta reklamı bunu gerektiriyor) |
@@ -168,31 +168,28 @@ görsellerinde logoyu yazı ağırlıklı (wordmark) kullan**, sopalı versiyonu
 > gelince bu tabloyu dolduracağız; marj 3.5x çıkmıyorsa **fiyatı yukarı çekmek**
 > gerekir — reklamı optimize etmek kurtarmaz.
 
-## 13. ⚠️ BAT / BAD tutarsızlığı — açık konu
+## 13. BAT / BAD tutarsızlığı — ✅ ÇÖZÜLDÜ (12 Ağustos 2026)
 
-Marka adı **BAT** CRAFT, ama alınan domain ve açılan Instagram hesabı **BAD**craft:
+İlk alınan `badcraftofficial.com` yanlışlıkla **BAD** yazılmıştı; marka **BAT**
+CRAFT olduğu için reklamı gören kişi `batcraft...` yazıp siteyi bulamayacaktı.
+Shopify parayı iade etti, **`batcraftofficial.com`** alındı.
 
-| Kanal | Mevcut | Sorun |
-|---|---|---|
-| Domain | `badcraftofficial.com` | Reklamı gören `batcraft...` yazıp bulamaz |
-| Instagram | `@badcraft.official34` | Aynı sorun + `34` markayı yerel/amatör gösteriyor |
-
-**Müsaitlik kontrolü (11 Ağustos 2026):**
-
-| Domain | Durum |
+| Kanal | Durum |
 |---|---|
-| `batcraftofficial.com` | ✅ **MÜSAİT** |
-| `batcraft.com.tr` | ✅ MÜSAİT |
-| `batcraftbats.com` | ✅ MÜSAİT |
-| `batcraft.com` | ❌ dolu |
+| Domain | **`batcraftofficial.com`** ✅ marka adıyla tutarlı |
+| E-posta | `merhaba@batcraftofficial.com` vb. ✅ |
+| Instagram | `@badcraft.official34` ⚠️ **tek kalan tutarsızlık** |
 
-**Önerilen çözüm (maliyet ~10-15 $, süre 10 dakika):**
-1. `batcraftofficial.com` alınır, **asıl domain** o olur
-2. `badcraftofficial.com` elde tutulur → asıl domaine **301 yönlendirme**
-   (yanlış yazanı da yakalar)
-3. Instagram handle → `@batcraft.official`
-   ⚠️ **Reklam başlamadan yap.** Takipçi ve reklam gelmeden handle değiştirmek
-   bedava ve zararsız; sonra değiştirmek link ve etiketleri kırar.
+### Kalan tek iş: Instagram handle
 
-Samed farklı karar verirse marka her yerde **tek yazımda** sabitlenmeli — yani logo
-da `BAD CRAFT` olur. İki farklı yazımın aynı anda yaşaması en kötü seçenek.
+`@badcraft.official34` → **`@batcraft.official`**
+
+İki sorun birden çözülür:
+1. **BAD → BAT** — artık domain BAT olduğu için hesap tek başına ters düşüyor
+2. **`34` gider** — plaka kodu markayı yerel/amatör gösteriyor, hatırlanmıyor
+
+⚠️ **Reklam başlamadan yap.** Şu an takipçi ve reklam yokken handle değiştirmek
+bedava ve zararsız. Reklam döndükten sonra değiştirmek link ve etiketleri kırar.
+
+Değiştirdikten sonra `theme/sections/footer-group.json` içindeki
+`instagram_url` da güncellenmeli — söyle, ben yaparım.

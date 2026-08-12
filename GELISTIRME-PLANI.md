@@ -94,18 +94,21 @@ Bunlar olmadan ne site kurulur ne reklam matematiği yapılır. Hepsi elinde var
 
 - [x] **0.4.1** Marka adı: **BAT CRAFT** — alt başlık `PERSONALIZED BATS`
 - [x] **0.4.2** Logo hazır (`logo.png`)
-- [x] **0.4.3** Domain alındı: `badcraftofficial.com`
+- [x] **0.4.3** Domain alındı: **`batcraftofficial.com`**
 - [x] **0.4.4** Instagram açıldı: `@badcraft.official34`
 - [x] **0.4.5** TikTok açılmayacak (karar)
 
-## 0.5 — BAT / BAD ✅ KARAR VERİLDİ
+## 0.5 — BAT / BAD ✅ ÇÖZÜLDÜ (12 Ağustos)
 
-- [x] Domain `badcraftofficial.com` ve mail `badcraft` olarak **kalıyor** —
-      ek harcama yapılmayacak
-- [x] **Görünen marka adı: BAT CRAFT** (logoda o yazıyor, müşteri onu görüyor)
-- [x] Instagram handle sonra düzenlenecek
-- [ ] **0.5.1** Shopify destek talebi onaylanırsa `batcraft` domainine geçilecek
-      (beklemede, iş akışını bloklamıyor)
+Önce yanlışlıkla `badcraftofficial.com` alınmıştı. Shopify parayı iade etti,
+doğrusu alındı. Marka artık her yerde **BAT** yazıyor.
+
+- [x] **0.5.1** `batcraftofficial.com` alındı, asıl domain o
+- [x] **0.5.2** E-posta adresleri `@batcraftofficial.com` olarak metinlere işlendi
+- [ ] **0.5.3** ⚠️ **Instagram handle: `@badcraft.official34` → `@batcraft.official`**
+      Tek kalan tutarsızlık. `34` plaka kodu da gider — markayı yerel/amatör
+      gösteriyor. **Reklam başlamadan yap**, şu an bedava ve zararsız.
+      Değiştirince söyle, footer'daki linki güncellerim.
 
 ## 0.6 — Logo ✅ TAMAMLANDI
 

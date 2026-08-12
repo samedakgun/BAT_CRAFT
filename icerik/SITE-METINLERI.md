@@ -19,8 +19,8 @@ ben güncellerim.
 | Alan | Değer |
 |---|---|
 | Store name | `BAT CRAFT` |
-| Store contact email | `merhaba@badcraftofficial.com` |
-| Sender email | `siparis@badcraftofficial.com` |
+| Store contact email | `merhaba@batcraftofficial.com` |
+| Sender email | `siparis@batcraftofficial.com` |
 | Currency | `TRY — Türk Lirası` |
 | Time zone | `(GMT+03:00) Istanbul` |
 | Unit system | Metric, kg |
@@ -175,7 +175,7 @@ için. Bu yüzden kazımadan önce mutlaka teyit alıyoruz.
 
 **Toplu sipariş yapabilir miyim?**
 Evet. Dükkân açılışı, takım, iş yeri hediyesi gibi toplu siparişler için
-`merhaba@badcraftofficial.com` adresine yaz veya WhatsApp'tan ulaş.
+`merhaba@batcraftofficial.com` adresine yaz veya WhatsApp'tan ulaş.
 
 **Ambalajı nasıl?**
 Hediyeye hazır kutusunda geliyor. Ayrıca hediye paketi istersen sipariş
@@ -215,8 +215,8 @@ Adı olan bir şey yapıyoruz. O kadar.
 ```
 Sorusu olan yazsın.
 
-E-posta: merhaba@badcraftofficial.com
-Sipariş: siparis@badcraftofficial.com
+E-posta: merhaba@batcraftofficial.com
+Sipariş: siparis@batcraftofficial.com
 WhatsApp: {{numara}}
 
 Mesajlara hafta içi aynı gün, hafta sonu ertesi iş günü dönüyoruz.
@@ -250,7 +250,7 @@ KVKK Aydınlatma Metni · Teslimat ve Kargo
 BAT CRAFT
 {{firma unvanı}} · {{adres}}
 Vergi Dairesi: {{vergi dairesi}} · Vergi No: {{vergi no}}
-merhaba@badcraftofficial.com · {{telefon}}
+merhaba@batcraftofficial.com · {{telefon}}
 ```
 
 **E-posta bülteni başlığı:**

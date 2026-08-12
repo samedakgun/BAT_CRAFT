@@ -15,8 +15,9 @@
 |---|---|
 | **Görünen ad** | **BAT CRAFT** (logoda o yazıyor) |
 | Alt başlık | PERSONALIZED BATS |
-| Domain | `badcraftofficial.com` — Shopify destek talebi onaylanırsa `batcraft`'a geçilecek |
-| Instagram | `@badcraft.official34` — sonra düzenlenecek |
+| Domain | **`batcraftofficial.com`** ✅ (12 Ağu — yanlış alınan `badcraft` iade edildi) |
+| E-posta | `merhaba@` · `siparis@` · `destek@batcraftofficial.com` |
+| Instagram | `@badcraft.official34` ⚠️ **`@batcraft.official`'a çevrilecek** |
 | TikTok | Açılmayacak |
 | Shopify | `bezbol.myshopify.com` · admin: `admin.shopify.com/store/bezbol` |
 | GitHub | `github.com/samedakgun/BAT_CRAFT` |
@@ -110,7 +111,14 @@ olur. Oluşturduktan sonra tema editöründe **Ürün bölümüne o ürünü se�
 **4. Menüyü düzelt:** İçerik → Menüler → "Katalog" linkini sil
 (tek ürünlü mağazada katalog anlamsız). Yerine SSS ve İletişim.
 
-**5. İletişim e-postasını** kurumsal adrese çevir (Ayarlar → Genel)
+**5. Domaini Shopify'a bağla:** Ayarlar → Alan Adları → `batcraftofficial.com`
+
+**6. Kurumsal e-postayı kur** (`merhaba@batcraftofficial.com`) ve Shopify iletişim
+e-postasını ona çevir (Ayarlar → Genel). Şu an `samedakgun88@gmail.com` görünüyor.
+⚠️ SPF/DKIM/DMARC kayıtlarını bana sor — yoksa sipariş e-postaları spam'e düşer.
+
+**7. Instagram handle'ı `@batcraft.official` yap** — tek kalan BAT/BAD
+tutarsızlığı. Reklam başlamadan yap; sonra link ve etiketleri kırar.
 
 ### 🤖 BEN — hazır bekleyen işler
 - **4.4** Yasal sayfa metinleri (mesafeli satış, ön bilgilendirme, KVKK, iade)
