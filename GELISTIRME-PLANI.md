@@ -104,7 +104,7 @@ Bunlar olmadan ne site kurulur ne reklam matematiği yapılır. Hepsi elinde var
 doğrusu alındı. Marka artık her yerde **BAT** yazıyor.
 
 - [x] **0.5.1** `batcraftofficial.com` alındı, asıl domain o
-- [x] **0.5.2** E-posta adresleri `@batcraftofficial.com` olarak metinlere işlendi
+- [ ] **0.5.2** Domain Shopify'a bağlanacak (Ayarlar → Alan Adları)
 - [ ] **0.5.3** ⚠️ **Instagram handle: `@badcraft.official34` → `@batcraft.official`**
       Tek kalan tutarsızlık. `34` plaka kodu da gider — markayı yerel/amatör
       gösteriyor. **Reklam başlamadan yap**, şu an bedava ve zararsız.
@@ -417,6 +417,7 @@ gemisi teması. Değiştirmeye gerek yok.
 
 - [ ] **5.1.1** Hesabın e-postasını **kurumsal e-postaya çevir** (2.3.3'teki
       `merhaba@batcraftofficial.com`) — Meta doğrulamalarında işe yarar
+      ⏳ Şu an `badcraft.official34@gmail.com` kullanılıyor
 - [ ] **5.1.2** Ayarlar → Hesap → **Professional / Business hesaba çevir**
       ⚠️ Reklam vermek için zorunlu, kişisel hesapla olmuyor
 - [ ] **5.1.3** Kategori: `Ürün/Hizmet` veya `Alışveriş ve perakende`

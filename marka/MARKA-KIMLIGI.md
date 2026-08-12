@@ -7,7 +7,7 @@
 | **Marka adı** | **BAT CRAFT** |
 | Alt başlık | PERSONALIZED BATS |
 | Domain | **`batcraftofficial.com`** ✅ |
-| E-posta | `merhaba@` · `siparis@` · `destek@batcraftofficial.com` |
+| E-posta | `badcraft.official34@gmail.com` ⏳ kurumsal mail kurulacak |
 | Instagram | `@badcraft.official34` ⚠️ `@batcraft.official`'a çevrilecek — bkz. §13 |
 | TikTok | Açılmayacak (karar) |
 | Logo | `logo.png` — sopa + taç işareti + wordmark |
@@ -177,7 +177,7 @@ Shopify parayı iade etti, **`batcraftofficial.com`** alındı.
 | Kanal | Durum |
 |---|---|
 | Domain | **`batcraftofficial.com`** ✅ marka adıyla tutarlı |
-| E-posta | `merhaba@batcraftofficial.com` vb. ✅ |
+| E-posta | `badcraft.official34@gmail.com` ⏳ domain alındı, kurumsal mail henüz kurulmadı |
 | Instagram | `@badcraft.official34` ⚠️ **tek kalan tutarsızlık** |
 
 ### Kalan tek iş: Instagram handle

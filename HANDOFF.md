@@ -1,11 +1,28 @@
 # HANDOFF — Şu An Neredeyiz
 
-**Son güncelleme:** 11 Ağustos 2026 (2. tur)
-**Marka:** BAT CRAFT — *Personalized Bats*
-**Durum:** ⏸️ **Ara verildi.** Tema hazır, Shopify'a yüklenmeyi bekliyor.
+**Son güncelleme:** 12 Ağustos 2026
+**Durum:** ⏸️ Ara verildi. Tema hazır, Shopify'a yüklenmeyi bekliyor.
 
-> **Kapsam:** Ürün üretimi ve tedarik tamamlandı. Maliyet/fiyat hesabı ve pazar
-> taraması **yayın sonrasına** bırakıldı. Şu an sadece dijital kurulum yapılıyor.
+---
+
+## 👋 Yeni sohbete başlıyorsan
+
+**BAT CRAFT** — isme özel gravürlü ahşap beyzbol sopası satan Shopify markası.
+Samed girişimci, ben teknik + yaratıcı + araştırma ortağıyım.
+
+**Okuma sırası:** bu dosya → `CLAUDE.md` (değişmez kurallar) →
+`GELISTIRME-PLANI.md` (numaralı yol haritası)
+
+**🔴 Her şeyden önce bilmen gereken kural:** Ürün **hediyelik / isme özel /
+koleksiyonluk** olarak konumlanıyor. Site, reklam ve sosyal medya metinlerinde
+şu kelimeler **geçmez**: koruma · savunma · güvenlik · caydırıcı · hırsız · silah.
+Meta bu çerçeveyi "self-defense weapon" sayıp reklam hesabını kapatıyor; ayrıca
+Türkiye'de 6136 sayılı kanun gereği savunma amaçlı taşıma suç.
+Gerekçe ve kaynaklar: `yasal/YASAL-RISKLER.md`
+
+**Kapsam:** Ürün üretimi ve tedarik **tamamlandı** — o tarafta iş yok.
+Maliyet/fiyat hesabı ve pazar taraması **yayın sonrasına** bırakıldı.
+Şu an sadece dijital kurulum yapılıyor.
 
 ---
 
@@ -16,7 +33,7 @@
 | **Görünen ad** | **BAT CRAFT** (logoda o yazıyor) |
 | Alt başlık | PERSONALIZED BATS |
 | Domain | **`batcraftofficial.com`** ✅ (12 Ağu — yanlış alınan `badcraft` iade edildi) |
-| E-posta | `merhaba@` · `siparis@` · `destek@batcraftofficial.com` |
+| E-posta | `badcraft.official34@gmail.com` — kurumsal mail **henüz kurulmadı** |
 | Instagram | `@badcraft.official34` ⚠️ **`@batcraft.official`'a çevrilecek** |
 | TikTok | Açılmayacak |
 | Shopify | `bezbol.myshopify.com` · admin: `admin.shopify.com/store/bezbol` |
@@ -26,7 +43,7 @@
 
 ---
 
-## ✅ Bu turda tamamlananlar
+## ✅ Şimdiye kadar yapılanlar
 
 ### Tema — tek ürün odaklı yeniden kuruldu
 Horizon v4.1.3, klasör artık `theme/` (uzun export adı sadeleştirildi).
@@ -113,9 +130,15 @@ olur. Oluşturduktan sonra tema editöründe **Ürün bölümüne o ürünü se�
 
 **5. Domaini Shopify'a bağla:** Ayarlar → Alan Adları → `batcraftofficial.com`
 
-**6. Kurumsal e-postayı kur** (`merhaba@batcraftofficial.com`) ve Shopify iletişim
-e-postasını ona çevir (Ayarlar → Genel). Şu an `samedakgun88@gmail.com` görünüyor.
-⚠️ SPF/DKIM/DMARC kayıtlarını bana sor — yoksa sipariş e-postaları spam'e düşer.
+**6. Kurumsal e-posta kur** — şu an `badcraft.official34@gmail.com` kullanılıyor,
+Shopify'da ise `samedakgun88@gmail.com` yazılı. Domain artık elde olduğuna göre
+`merhaba@batcraftofficial.com` kurulabilir (Google Workspace ~6 $/ay veya Zoho'nun
+ücretsiz planı).
+> Neden önemli: Gmail adresi ödeme altyapısı (PayTR/iyzico) ve Meta doğrulamalarında
+> sorun çıkarıyor, müşteride de güven kırıyor. Acil değil ama ödeme başvurusundan
+> önce halledilmeli.
+> Kurunca **SPF/DKIM/DMARC** kayıtlarını bana sor — onlarsız sipariş e-postaları
+> spam'e düşer.
 
 **7. Instagram handle'ı `@batcraft.official` yap** — tek kalan BAT/BAD
 tutarsızlığı. Reklam başlamadan yap; sonra link ve etiketleri kırar.
@@ -129,7 +152,7 @@ tutarsızlığı. Reklam başlamadan yap; sonra link ve etiketleri kırar.
 
 ---
 
-## ✅ Ürün bilgileri işlendi (11 Ağustos)
+## ✅ Ürün bilgileri işlendi
 
 Atölyeden gelen bilgiler siteye, temaya ve metinlere girildi:
 
